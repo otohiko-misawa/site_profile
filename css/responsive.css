@@ -25,6 +25,8 @@
     margin: 0 1rem;
   }
 
+  /*メインビジュアル*/
+  #mainvisual ul,
   #mainvisual img {
     height: calc(100vh - 60px);
   }
