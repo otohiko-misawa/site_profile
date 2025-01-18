@@ -1,1 +1,131 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+/*共通スタイル*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #14171a;
+  font-family: "Quicksand", serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+header .wrapper {
+  margin-bottom: 0;
+}
+
+.section_title {
+  margin-bottom: 60px;
+  border-bottom: 1px solid #383e45;
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.content_title {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+/*ヘッダー*/
+header {
+  background-color: white;
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+header h1 a {
+  color: #fafafa;
+  background-color: #111;
+  padding: 0 1rem;
+}
+
+/*ナビゲーション(ヘッダー内)*/
+nav ul {
+  display: flex;
+  padding: 10px 0;
+}
+
+nav li {
+  margin-left: 10px;
+}
+
+nav li a {
+  color: #24292e;
+  font-weight: 700;
+}
+
+nav li a:hover {
+  opacity: 0.7;
+}
+
+/*メインビジュアル部分*/
+#mainvisual {
+  margin-bottom: 80px;
+}
+
+#mainvisual img {
+  /*Tips. imgはwidthとheight指定可能な特殊なインライン要素だが、
+  親要素のサイズ形成に若干影響しているのでblockにする…のかも*/
+  display: block;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  /* object-position: right; */
+}
+
+/*About部分*/
+#about .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-right: 100px;
+}
+
+#about .text {
+  text-align: left;
+}
+
+/*Photo部分*/
+#photo ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#photo li {
+  flex-basis: 32%; /*note: widthよりflexアイテムとして意図が明確になる*/
+}
+
+/*フッター部分*/
+footer {
+  padding: 10px 0;
+  text-align: center;
+}
