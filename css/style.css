@@ -29,15 +29,11 @@ img {
   margin-bottom: 150px;
 }
 
-header .wrapper {
-  margin-bottom: 0;
-}
-
 .section_title {
+  display: inline-block;
   margin-bottom: 60px;
   border-bottom: 1px solid #383e45;
   font-size: 2rem;
-  display: inline-block;
 }
 
 .content_title {
@@ -47,12 +43,18 @@ header .wrapper {
 
 /*ヘッダー*/
 header {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 header .wrapper {
+  margin-bottom: 0;
   display: flex;
   justify-content: space-between;
+  /* margin-right: 20px;  */
   padding: 10px 0;
 }
 
@@ -69,7 +71,7 @@ nav ul {
 }
 
 nav li {
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 nav li a {
@@ -82,6 +84,10 @@ nav li a:hover {
 }
 
 /*メインビジュアル部分*/
+main {
+  margin-top: 60px;
+}
+
 #mainvisual {
   margin-bottom: 80px;
 }

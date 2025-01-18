@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*PC 960px以下*/
+@media screen and (max-width: 1020px) {
+  /*memo: 
+  PCでwidth:960以下になった際にメニューが端に寄りすぎるので簡易調整(少し多めに)
+  */
+  nav {
+    margin-right: 30px;
+  }
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  nav {
+    margin-right: 0;
+  }
+
+  .wrapper {
+    margin-bottom: 100px;
+  }
+
+  .wrapper p,
+  header .wrapper {
+    margin: 0 1rem;
+  }
+
+  #mainvisual img {
+    height: calc(100vh - 60px);
+  }
+
+  /*About部分*/
+  #about .content {
+    flex-direction: column;
+  }
+
+  #about img {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  #about .text {
+    text-align: center;
+  }
+
+  /*Photo部分*/
+  #photo ul {
+    flex-direction: column;
+  }
+
+  #photo li {
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+  }
+}
