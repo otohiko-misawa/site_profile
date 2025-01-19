@@ -8,6 +8,15 @@
   nav {
     margin-right: 30px;
   }
+
+  /*memo: 幅が狭くなるとphotoの傾きで見えづらいので0°戻す*/
+  #photo li:first-of-type {
+    transform: rotate(0);
+  }
+
+  #photo li:last-of-type {
+    transform: rotate(0);
+  }
 }
 
 /*スマートフォン*/
@@ -53,6 +62,7 @@
   #photo li {
     flex-basis: 100%;
     margin-bottom: 2rem;
+    box-shadow: none;
   }
 
   /*ハンバーガーメニューとnavの設定*/

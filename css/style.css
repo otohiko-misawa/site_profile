@@ -167,6 +167,14 @@ imgで定義したheight情報は親要素に伝播されず途絶えてしま�
   box-shadow: 10px 8px 29px -6px rgba(0, 0, 0, 0.47);
 }
 
+#photo li:first-of-type {
+  transform: rotate(-3deg); /* 反時計回りに少し回転 */
+}
+
+#photo li:last-of-type {
+  transform: rotate(3deg); /* 時計回りに少し回転 */
+}
+
 /*フッター部分*/
 footer {
   padding: 10px 0;
