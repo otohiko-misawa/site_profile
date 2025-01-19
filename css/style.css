@@ -164,6 +164,7 @@ imgで定義したheight情報は親要素に伝播されず途絶えてしま�
 
 #photo li {
   flex-basis: 32%; /*note: widthよりflexアイテムとして意図が明確になる*/
+  box-shadow: 10px 8px 29px -6px rgba(0, 0, 0, 0.47);
 }
 
 /*フッター部分*/
