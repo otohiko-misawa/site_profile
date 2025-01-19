@@ -54,4 +54,58 @@
     flex-basis: 100%;
     margin-bottom: 2rem;
   }
+
+  /*ハンバーガーメニューとnavの設定*/
+  #menu-icon {
+    display: block;
+    font-size: 50px;
+  }
+
+  #i-deactive {
+    display: block;
+  }
+
+  #i-active {
+    display: none;
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -10; /*tips: mainvisualの背面に行ってしまうので最前面に */
+    background-color: rgba(255, 255, 255, 0.9);
+
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 40px 0;
+  }
+
+  nav li {
+    margin-left: 0;
+    padding: 0.8rem;
+  }
+
+  nav li a {
+    font-size: 3rem;
+  }
+
+  /*note: ~ は同じ親要素を持つ後続指定セレクタ…らしい*/
+  #menu-toggle:checked ~ label #i-active {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ label #i-deactive {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ nav {
+    display: block;
+  }
 }

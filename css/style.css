@@ -41,6 +41,11 @@ img {
   margin: 10px 0;
 }
 
+/* note: inputのデフォルトチェックボックスは常に非表示 */
+#menu-toggle {
+  display: none;
+}
+
 /*ヘッダー*/
 header {
   background-color: rgba(255, 255, 255, 0.5);
@@ -48,12 +53,14 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000; /*tips: mainvisualの背面に行ってしまうので最前面に */
 }
 
 header .wrapper {
   margin-bottom: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   /* margin-right: 20px;  */
   padding: 10px 0;
 }
@@ -77,6 +84,10 @@ nav li {
 nav li a {
   color: #24292e;
   font-weight: 700;
+}
+
+#menu-icon {
+  display: none;
 }
 
 nav li a:hover {
