@@ -66,7 +66,9 @@
   }
 
   /*ハンバーガーメニューとnavの設定*/
-
+  .nav_btn {
+    display: block;
+  }
   nav {
     position: fixed;
     width: 100%;

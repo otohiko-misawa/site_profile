@@ -98,15 +98,13 @@ nav li a:hover {
 
 /*ハンバーガーメニュー*/
 .nav_btn {
-  /* display: none; */
+  display: none;
   position: relative;
   width: 40px;
   height: 40px;
   z-index: 1;
   background: none;
   border: none;
-  /* TODO:後で削除 */
-  /* background-color: #eee; */
 }
 
 .nav_btn span,
