@@ -1,5 +1,11 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/*定数*/
+:root {
+  --main-color: #111111;
+  --base-color: #ffffff;
+}
 
 /*共通スタイル*/
 * {
@@ -7,7 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   color: #14171a;
-  font-family: "Quicksand", serif;
+  font-family: 'Quicksand', serif;
 }
 
 li {
@@ -86,12 +92,60 @@ nav li a {
   font-weight: 700;
 }
 
-#menu-icon {
-  display: none;
-}
-
 nav li a:hover {
   opacity: 0.7;
+}
+
+/*ハンバーガーメニュー*/
+.nav_btn {
+  /* display: none; */
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  background: none;
+  border: none;
+  /* TODO:後で削除 */
+  /* background-color: #eee; */
+}
+
+.nav_btn span,
+.nav_btn::before,
+.nav_btn::after {
+  width: 36px;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: 2px;
+
+  /*三↔✕切り替え時*/
+  transition: transform 0.4s;
+}
+
+.nav_btn::before,
+.nav_btn::after {
+  /*NOTE:
+  疑似要素はcontentを明示的に空にしないと表示されない*/
+  content: '';
+}
+
+.nav_btn::before {
+  transform: translateY(-11px);
+}
+
+.nav_btn::after {
+  transform: translateY(11px);
+}
+
+body.is-nav-open .nav_btn span {
+  transform: scaleX(0);
+}
+body.is-nav-open .nav_btn::before {
+  transform: translateY(0) rotate(45deg);
+}
+body.is-nav-open .nav_btn::after {
+  transform: translateY(0) rotate(-45deg);
 }
 
 /*メインビジュアル部分*/
@@ -104,7 +158,7 @@ main {
 }
 
 .clearfix::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }

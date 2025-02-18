@@ -66,28 +66,22 @@
   }
 
   /*ハンバーガーメニューとnavの設定*/
-  #menu-icon {
-    display: block;
-    font-size: 40px;
-  }
-
-  #i-deactive {
-    display: block;
-  }
-
-  #i-active {
-    display: none;
-  }
 
   nav {
     position: fixed;
+    width: 100%;
     left: 0;
-    right: 0;
     top: 0;
     z-index: -10; /*tips: mainvisualの背面に行ってしまうので最前面に */
     background-color: rgba(255, 255, 255, 0.9);
 
-    display: none;
+    /*移動アニメーション*/
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+  }
+
+  body.is-nav-open nav {
+    transform: translateY(0);
   }
 
   nav ul {
@@ -104,18 +98,5 @@
 
   nav li a {
     font-size: 3rem;
-  }
-
-  /*note: ~ は同じ親要素を持つ後続指定セレクタ…らしい*/
-  #menu-toggle:checked ~ label #i-active {
-    display: block;
-  }
-
-  #menu-toggle:checked ~ label #i-deactive {
-    display: none;
-  }
-
-  #menu-toggle:checked ~ nav {
-    display: block;
   }
 }
