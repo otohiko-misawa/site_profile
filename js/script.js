@@ -38,8 +38,6 @@ function scrollToTargetElement(scrollToElementId) {
 
   //スクロールアニメーション実行
   const startScrollAnimation = (posY) => {
-    //NOTE:
-    // ここは、アニメーション操作のみ使い勝手がいいjQuery
     $('html').animate(
       {
         scrollTop: posY,
@@ -104,4 +102,19 @@ $('#mainvisual').slick({
       },
     },
   ],
+});
+
+// ===============================
+// PHOTOのフェードイン
+// ===============================
+const $photoList = $('.photo_list');
+$(window).on('scroll', () => {
+  const isInView = $photoList.inView('topOnly', 150);
+  if (isInView && !$photoList.hasClass('in-view')) {
+    $photoList.addClass('in-view');
+
+    setTimeout(() => {
+      $photoList.addClass('in-view-after');
+    }, 2000);
+  }
 });
