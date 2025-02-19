@@ -133,7 +133,7 @@ $(window).on('scroll', () => {
     //各カード要素個別にアニメーションさせる
     $photoCards.each(function () {
       const $card = $(this);
-      const isInView = $card.inView('topOnly', 100);
+      const isInView = $card.inView('topOnly', 90);
       if (isInView) {
         attachInViewClass($card);
       }

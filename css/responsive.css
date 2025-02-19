@@ -76,6 +76,13 @@
     opacity: 1;
     transform: translateX(0);
   }
+  .photo_list li:nth-of-type(2) .photo_card {
+    transition-delay: 0;
+  }
+
+  .photo_list li:nth-of-type(3) .photo_card {
+    transition-delay: 0;
+  }
 
   /*ハンバーガーメニューとnavの設定*/
   .nav_btn {
