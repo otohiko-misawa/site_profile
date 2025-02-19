@@ -111,10 +111,12 @@ const $photoList = $('.photo_list');
 $(window).on('scroll', () => {
   const isInView = $photoList.inView('topOnly', 150);
   if (isInView && !$photoList.hasClass('in-view')) {
+    //ビューポートアニメーション
     $photoList.addClass('in-view');
 
+    //回転のアニメーション遅延実行
     setTimeout(() => {
       $photoList.addClass('in-view-after');
-    }, 2000);
+    }, 1500);
   }
 });

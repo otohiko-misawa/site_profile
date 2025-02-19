@@ -190,6 +190,10 @@ main {
 
 .photo_list li {
   flex-basis: 32%; /*note: widthよりflexアイテムとして意図が明確になる*/
+
+  /*NOTE:
+  translateYとrotateアニメーションを混同できないので、rotateだけはliで行う*/
+  transition: 0.4s;
 }
 
 .photo_card {
@@ -198,7 +202,7 @@ main {
 
   transition: 0.7s;
   opacity: 0;
-  transform: translateY(50px) rotate(0);
+  transform: translateY(50px);
 }
 
 .photo_list.in-view .photo_card {
@@ -214,11 +218,11 @@ main {
   transition-delay: 0.6s;
 }
 
-.photo_list.in-view-after li:first-of-type .photo_card {
+.photo_list.in-view-after li:first-of-type {
   transform: rotate(-3deg);
 }
 
-.photo_list.in-view-after li:last-of-type .photo_card {
+.photo_list.in-view-after li:last-of-type {
   transform: rotate(3deg);
 }
 

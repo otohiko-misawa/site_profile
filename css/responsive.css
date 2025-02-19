@@ -10,11 +10,11 @@
   }
 
   /*memo: 幅が狭くなるとphotoの傾きで見えづらいので0°戻す*/
-  .photo_list li:first-of-type .photo_card {
+  .photo_list.in-view-after li:first-of-type {
     transform: rotate(0);
   }
 
-  .photo_list li:last-of-type .photo_card {
+  .photo_list.in-view-after li:last-of-type {
     transform: rotate(0);
   }
 }
