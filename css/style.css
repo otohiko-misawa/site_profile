@@ -3,8 +3,9 @@
 
 /*定数*/
 :root {
-  --main-color: #111111;
-  --base-color: #ffffff;
+  --color-main: #111;
+  --color-font: #14171a;
+  --color-font-nav: #24292e;
 }
 
 /*共通スタイル*/
@@ -12,7 +13,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #14171a;
+  color: var(--color-font);
   font-family: 'Quicksand', serif;
 }
 
@@ -79,7 +80,7 @@ header .wrapper {
 
 header h1 a {
   color: #fafafa;
-  background-color: #111;
+  background-color: var(--color-main);
   padding: 0 1rem;
 }
 
@@ -94,7 +95,7 @@ nav li {
 }
 
 nav li a {
-  color: #24292e;
+  color: var(--color-font-nav);
   font-weight: 700;
 }
 
@@ -118,7 +119,7 @@ nav li a:hover {
 .nav_btn::after {
   width: 36px;
   height: 2px;
-  background-color: var(--main-color);
+  background-color: var(--color-main);
   position: absolute;
   top: 50%;
   left: 2px;
