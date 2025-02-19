@@ -68,6 +68,15 @@
     box-shadow: none;
   }
 
+  /* Photo ビューポートアニメーション(PC版) */
+  .photo_card {
+    transform: translateX(-50px);
+  }
+  .photo_card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   /*ハンバーガーメニューとnavの設定*/
   .nav_btn {
     display: block;
