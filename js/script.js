@@ -1,5 +1,5 @@
 // ================================
-// ナビゲーション関連ロジック
+// ナビゲーション関連
 // ================================
 
 //ナビゲーション展開クラス切り替えメソッド
@@ -67,4 +67,30 @@ document.querySelectorAll('nav a[href]').forEach((link) => {
 document.querySelector('header h1 a').addEventListener('click', (e) => {
   e.preventDefault(); //デフォルトaタグの遷移イベントを切る
   scrollToTargetElement(e.target.getAttribute('href'));
+});
+
+// ================================
+// メインビジュアルスライド関連
+// ================================
+
+$('#mainvisual').slick({
+  dots: true,
+  autoplay: true,
+  speed: 800,
+  //NOTE:画面いっぱいの画像要素にarrowが有効になっていると
+  //画面幅+arrow分確保され、表示がおかしくなるので明示的OFF。
+  arrows: false,
+  responsive: [
+    {
+      //SP幅
+      breakpoint: 599,
+      settings: {
+        //NOTE:スマホだとスライドは見栄え悪いのでフェード式にする
+        fade: true,
+        swipe: false,
+        cssEase: 'linear',
+        dots: false,
+      },
+    },
+  ],
 });
