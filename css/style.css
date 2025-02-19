@@ -1,13 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-/*定数*/
-:root {
-  --color-main: #111;
-  --color-font: #14171a;
-  --color-font-nav: #24292e;
-}
-
 /*共通スタイル*/
 * {
   margin: 0;

@@ -1,3 +1,12 @@
+//===============================
+// 共通
+//===============================
+
+//SPのブレークポイントpx値
+const breakPointSp = parseInt(
+  getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-sp')
+);
+
 // ================================
 // ナビゲーション関連
 // ================================
@@ -85,7 +94,7 @@ $('#mainvisual').slick({
   responsive: [
     {
       //SP幅
-      breakpoint: 599,
+      breakpoint: breakPointSp,
       settings: {
         //NOTE:スマホだと見栄えと操作性悪いのでフェード式
         fade: true,
