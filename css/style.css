@@ -183,21 +183,25 @@ main {
 }
 
 /*Photo部分*/
-#photo ul {
+.photo_list {
   display: flex;
   justify-content: space-between;
 }
 
-#photo li {
+.photo_list li {
   flex-basis: 32%; /*note: widthよりflexアイテムとして意図が明確になる*/
+}
+
+.photo_card {
+  height: 100%;
   box-shadow: 10px 8px 29px -6px rgba(0, 0, 0, 0.47);
 }
 
-#photo li:first-of-type {
+.photo_list li:first-of-type .photo_card {
   transform: rotate(-3deg); /* 反時計回りに少し回転 */
 }
 
-#photo li:last-of-type {
+.photo_list li:last-of-type .photo_card {
   transform: rotate(3deg); /* 時計回りに少し回転 */
 }
 
