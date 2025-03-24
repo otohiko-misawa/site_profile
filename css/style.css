@@ -263,6 +263,15 @@ main {
   height: 100%;
   box-shadow: 10px 8px 29px -6px rgba(0, 0, 0, 0.47);
   padding: 1rem;
+
+  transition: 0.7s;
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.works_card.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*フッター部分*/

@@ -148,3 +148,29 @@ $(window).on('scroll', () => {
     }
   }
 });
+
+// ===============================
+// WORKSのフェードイン
+// ===============================
+const $worksCards = $('.works_card');
+
+$(window).on('scroll', () => {
+  //in-viewのclassを付与
+  const attachInViewClass = ($jqElement) => {
+    if ($jqElement.hasClass('in-view')) {
+      return;
+    }
+
+    //ビューポートアニメーション
+    $jqElement.addClass('in-view');
+  };
+
+  //各カード要素個別にアニメーションさせる
+  $worksCards.each(function () {
+    const $card = $(this);
+    const isInView = $card.inView('topOnly', 120);
+    if (isInView) {
+      attachInViewClass($card);
+    }
+  });
+});

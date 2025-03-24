@@ -95,6 +95,12 @@
   .works_card {
     box-shadow: none;
     padding: 0;
+
+    transform: translateX(-50px);
+  }
+
+  .works_card.in-view {
+    transform: translateX(0);
   }
 
   /*ハンバーガーメニューとnavの設定*/
