@@ -255,13 +255,14 @@ main {
 }
 
 .works_list li img {
-  /* object-fit: fill; */
-  width: 100%;
+  object-fit: fill;
+  /* width: 100%; */
 }
 
 .works_card {
   height: 100%;
   box-shadow: 10px 8px 29px -6px rgba(0, 0, 0, 0.47);
+  padding: 1rem;
 }
 
 /*フッター部分*/
