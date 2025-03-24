@@ -228,6 +228,40 @@ main {
   transform: rotate(3deg);
 }
 
+/*Works部分*/
+.works_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*最大3列構成にする*/
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.works_list li {
+  /*未指定のliはデフォ1列*/
+  grid-column: span 1;
+}
+
+.works_list li.column-min {
+  grid-column: span 1;
+}
+
+.works_list li.column-medium {
+  grid-column: span 2; /*2列にまたぐ*/
+}
+
+.works_list li.column-max {
+  grid-column: span 3; /*3列にまたぐ*/
+  column-gap: 0rem;
+}
+
+.works_list li img {
+}
+
+.works_card {
+  height: 100%;
+  box-shadow: 10px 8px 29px -6px rgba(0, 0, 0, 0.47);
+}
+
 /*フッター部分*/
 footer {
   padding: 10px 0;

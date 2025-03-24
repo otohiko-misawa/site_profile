@@ -84,6 +84,18 @@
     transition-delay: 0;
   }
 
+  /*Works部分*/
+  .works_list {
+    display: grid;
+    grid-template-columns: 1fr; /*強制1列構成にする*/
+    column-gap: 0rem;
+    row-gap: 2rem;
+  }
+
+  .works_card {
+    box-shadow: none;
+  }
+
   /*ハンバーガーメニューとnavの設定*/
   .nav_btn {
     display: block;
