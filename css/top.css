@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/*メインビジュアル部分*/
+/* ========================
+メインビジュアル部分
+======================== */
 main {
   margin-top: 60px;
 }
@@ -17,7 +19,9 @@ main {
   object-fit: cover;
 }
 
-/*About部分*/
+/* ========================
+About部分
+======================== */
 #about .content {
   display: flex;
   justify-content: center;
@@ -35,7 +39,9 @@ main {
   text-align: left;
 }
 
-/*Photo部分*/
+/* ========================
+Photo部分
+======================== */
 .photo_list {
   display: flex;
   justify-content: space-between;
@@ -81,7 +87,9 @@ main {
   transform: rotate(3deg);
 }
 
-/*Works部分*/
+/* ========================
+Works部分
+======================== */
 .works_list {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /*最大3列構成にする*/
