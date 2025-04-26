@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*
+Warning:
+pluginを除く全てのCSSより前に読み込むこと
+*/
+
+/*
+SP: ～599
+PC: 1020px～
+*/
+
+/* ========================
+各CSSやJavaScriptの共通定数
+======================== */
+:root {
+  --color-main: #111;
+  --color-font: #14171a;
+  --color-font-nav: #24292e;
+  /* Js参照用breakpoint
+    CSSファイルでは直接参照できないので値を直書き */
+  --breakpoint-pc-narrow: 1020px;
+  --breakpoint-sp: 599px;
+}
