@@ -19,6 +19,14 @@ main {
   object-fit: cover;
 }
 
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  #mainvisual ul,
+  #mainvisual img {
+    height: calc(100vh - 60px);
+  }
+}
+
 /* ========================
 About部分
 ======================== */
@@ -37,6 +45,22 @@ About部分
 
 #about .text {
   text-align: left;
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  #about .content {
+    flex-direction: column;
+  }
+
+  #about img {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  #about .text {
+    text-align: center;
+  }
 }
 
 /* ========================
@@ -87,6 +111,50 @@ Photo部分
   transform: rotate(3deg);
 }
 
+/*PC 960px以下*/
+@media screen and (max-width: 1020px) {
+  /*memo: 幅が狭くなるとphotoの傾きで見えづらいので0°戻す*/
+  .photo_list.in-view-after li:first-of-type {
+    transform: rotate(0);
+  }
+
+  .photo_list.in-view-after li:last-of-type {
+    transform: rotate(0);
+  }
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .photo_list {
+    flex-direction: column;
+  }
+
+  .photo_list li {
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .photo_card {
+    box-shadow: none;
+  }
+
+  /* Photo ビューポートアニメーション(PC版) */
+  .photo_card {
+    transform: translateX(-50px);
+  }
+  .photo_card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .photo_list li:nth-of-type(2) .photo_card {
+    transition-delay: 0;
+  }
+
+  .photo_list li:nth-of-type(3) .photo_card {
+    transition-delay: 0;
+  }
+}
+
 /* ========================
 Works部分
 ======================== */
@@ -134,4 +202,25 @@ Works部分
 .works_card.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .works_list {
+    display: grid;
+    grid-template-columns: 1fr; /*強制1列構成にする*/
+    column-gap: 0;
+    row-gap: 2rem;
+  }
+
+  .works_card {
+    box-shadow: none;
+    padding: 0;
+
+    transform: translateX(-50px);
+  }
+
+  .works_card.in-view {
+    transform: translateX(0);
+  }
 }

@@ -88,6 +88,18 @@ img {
   display: none;
 }
 
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .wrapper {
+    margin-bottom: 100px;
+  }
+
+  .wrapper p,
+  header .wrapper {
+    margin: 0 1rem;
+  }
+}
+
 /* ========================
 ヘッダー/ナビ
 ======================== */
@@ -183,6 +195,60 @@ body.is-nav-open .nav_btn::before {
 }
 body.is-nav-open .nav_btn::after {
   transform: translateY(0) rotate(-45deg);
+}
+
+/*PC 960px以下*/
+@media screen and (max-width: 1020px) {
+  /*memo: 
+  PCでwidth:960以下になった際にメニューが端に寄りすぎるので簡易調整(少し多めに)
+  */
+  nav {
+    margin-right: 30px;
+  }
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  nav {
+    margin-right: 0;
+  }
+
+  /*ハンバーガーメニューとnavの設定*/
+  .nav_btn {
+    display: block;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -10; /*tips: mainvisualの背面に行ってしまうので最前面に */
+    background-color: rgba(255, 255, 255, 0.9);
+
+    /*移動アニメーション*/
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+  }
+
+  body.is-nav-open nav {
+    transform: translateY(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 40px 0;
+  }
+
+  nav li {
+    margin-left: 0;
+    padding: 0.8rem;
+  }
+
+  nav li a {
+    font-size: var(--size_xl);
+  }
 }
 
 /* ========================
