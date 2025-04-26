@@ -1,8 +1,5 @@
 @charset "UTF-8";
-/*
-Warning:
-pluginを除く全てのCSSより前に読み込むこと
-*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 /*
 SP: ～599
@@ -15,9 +12,183 @@ PC: 1020px～
 :root {
   --color-main: #111;
   --color-font: #14171a;
-  --color-font-nav: #24292e;
+  --color-font_nav: #24292e;
+  --color-header_bg: rgba(255, 255, 255, 0.5);
+  /*TODO:font-size系は全て--size_~の定数を使う*/
+  --size_es: 0.8rem;
+  --size_sm: 1rem;
+  --size_md: 1.6rem;
+  --size_lg: 2.6rem;
+  --size_xl: 4.1rem;
+  --size_xxl: 6.6rem;
+  /*TODO:いまは殆ど適用していないが、将来的に全て8pxベースの定数を使う*/
+  --gutter_base: 8px;
+  --gutter-section: calc(var(--gutter_base) * 10);
+  --gutter-section_pc: calc(var(--gutter_base) * 20);
+  --gutter-contents: calc(var(--gutter_base) * 5);
+  --gutter-contents_pc: calc(var(--gutter_base) * 10);
+  --gutter-contents_side: calc(var(--gutter_base) * 2);
+  --font_quicksand: 'Quicksand', serif;
+  --line_height_default: 1.75;
+
   /* Js参照用breakpoint
     CSSファイルでは直接参照できないので値を直書き */
   --breakpoint-pc-narrow: 1020px;
   --breakpoint-sp: 599px;
+}
+
+/* ========================
+共通設定
+======================== */
+html {
+  font-size: 62.5%;
+  color: var(--color-font);
+}
+
+body {
+  font-size: var(--size_md);
+  font-family: var(--font_quicksand);
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.section_title {
+  display: inline-block;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #383e45;
+  font-size: var(--size_xl);
+}
+
+.content_title {
+  font-size: var(--size_md);
+  margin: 10px 0;
+}
+
+/* note: inputのデフォルトチェックボックスは常に非表示 */
+#menu-toggle {
+  display: none;
+}
+
+/* ========================
+ヘッダー/ナビ
+======================== */
+/*ヘッダー部*/
+header {
+  background-color: var(--color-header_bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /*tips: mainvisualの背面に行ってしまうので最前面に */
+}
+
+header .wrapper {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-right: 20px;  */
+  padding: 10px 0;
+}
+
+header h1 a {
+  color: #fafafa;
+  background-color: var(--color-main);
+  padding: 0 1rem;
+}
+
+/*ナビゲーション(ヘッダー内)*/
+nav ul {
+  display: flex;
+  padding: 10px 0;
+}
+
+nav li {
+  margin-left: 30px;
+}
+
+nav li a {
+  color: var(--color-font_nav);
+  font-weight: 700;
+}
+
+nav li a:hover {
+  opacity: 0.7;
+}
+
+/*ハンバーガーメニュー*/
+.nav_btn {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  background: none;
+  border: none;
+}
+
+.nav_btn span,
+.nav_btn::before,
+.nav_btn::after {
+  width: 36px;
+  height: 2px;
+  background-color: var(--color-main);
+  position: absolute;
+  top: 50%;
+  left: 2px;
+
+  /*三↔✕切り替え時*/
+  transition: transform 0.4s;
+}
+
+.nav_btn::before,
+.nav_btn::after {
+  /*NOTE:
+  疑似要素はcontentを明示的に空にしないと表示されない*/
+  content: '';
+}
+
+.nav_btn::before {
+  transform: translateY(-11px);
+}
+
+.nav_btn::after {
+  transform: translateY(11px);
+}
+
+body.is-nav-open .nav_btn span {
+  transform: scaleX(0);
+}
+body.is-nav-open .nav_btn::before {
+  transform: translateY(0) rotate(45deg);
+}
+body.is-nav-open .nav_btn::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* ========================
+フッター
+======================== */
+footer {
+  padding: 10px 0;
+  text-align: center;
 }

@@ -1,151 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
-/*共通スタイル*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: var(--color-font);
-  font-family: 'Quicksand', serif;
-}
-
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 150px;
-}
-
-.section_title {
-  display: inline-block;
-  margin-bottom: 60px;
-  border-bottom: 1px solid #383e45;
-  font-size: 2rem;
-}
-
-.content_title {
-  font-size: 1rem;
-  margin: 10px 0;
-}
-
-/* note: inputのデフォルトチェックボックスは常に非表示 */
-#menu-toggle {
-  display: none;
-}
-
-/*ヘッダー*/
-header {
-  background-color: rgba(255, 255, 255, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /*tips: mainvisualの背面に行ってしまうので最前面に */
-}
-
-header .wrapper {
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* margin-right: 20px;  */
-  padding: 10px 0;
-}
-
-header h1 a {
-  color: #fafafa;
-  background-color: var(--color-main);
-  padding: 0 1rem;
-}
-
-/*ナビゲーション(ヘッダー内)*/
-nav ul {
-  display: flex;
-  padding: 10px 0;
-}
-
-nav li {
-  margin-left: 30px;
-}
-
-nav li a {
-  color: var(--color-font-nav);
-  font-weight: 700;
-}
-
-nav li a:hover {
-  opacity: 0.7;
-}
-
-/*ハンバーガーメニュー*/
-.nav_btn {
-  display: none;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-  background: none;
-  border: none;
-}
-
-.nav_btn span,
-.nav_btn::before,
-.nav_btn::after {
-  width: 36px;
-  height: 2px;
-  background-color: var(--color-main);
-  position: absolute;
-  top: 50%;
-  left: 2px;
-
-  /*三↔✕切り替え時*/
-  transition: transform 0.4s;
-}
-
-.nav_btn::before,
-.nav_btn::after {
-  /*NOTE:
-  疑似要素はcontentを明示的に空にしないと表示されない*/
-  content: '';
-}
-
-.nav_btn::before {
-  transform: translateY(-11px);
-}
-
-.nav_btn::after {
-  transform: translateY(11px);
-}
-
-body.is-nav-open .nav_btn span {
-  transform: scaleX(0);
-}
-body.is-nav-open .nav_btn::before {
-  transform: translateY(0) rotate(45deg);
-}
-body.is-nav-open .nav_btn::after {
-  transform: translateY(0) rotate(-45deg);
-}
-
 /*メインビジュアル部分*/
 main {
   margin-top: 60px;
@@ -255,6 +108,7 @@ main {
 }
 
 .works_list li img {
+  display: inline-block;
   object-fit: fill;
   /* width: 100%; */
 }
@@ -272,10 +126,4 @@ main {
 .works_card.in-view {
   opacity: 1;
   transform: translateY(0);
-}
-
-/*フッター部分*/
-footer {
-  padding: 10px 0;
-  text-align: center;
 }

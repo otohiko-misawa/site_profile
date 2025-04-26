@@ -137,6 +137,6 @@
   }
 
   nav li a {
-    font-size: 3rem;
+    font-size: var(--size_xl);
   }
 }
