@@ -16,6 +16,33 @@ function toggleNavOpenClass(isNavOpen = null) {
   $('body').toggleClass('is-nav-open', isNavOpen);
 }
 
+/**
+ * リンクの種類により適切な処理を行うメソッド
+ *
+ * #で始まるページ内リンクの場合はスクロール、
+ * それ以外は通常のリンク挙動
+ * @param {string} href - リンク先のURL
+ * @return {boolean} - ページ内リンクだったらtrue、それ以外はfalse
+ **/
+function handleLinkNavigation(href) {
+  if (href === null) {
+    console.error('リンク先が指定されていません');
+    return false;
+  }
+
+  //#もしくは''で始まるかどうかチェック(ページ内リンクかどうか)
+  const isPageInternalLink = href.startsWith('#') || href === '';
+
+  if (isPageInternalLink) {
+    //ページ内リンクとして処理
+    scrollToTargetElement(href);
+    return true;
+  } else {
+    //外部リンクなので通常動作
+    return false;
+  }
+}
+
 //aタグのhrefで指定したIDの要素にスクロールするメソッド
 function scrollToTargetElement(scrollToElementId) {
   //要素のIDからスクロール位置を返す
@@ -48,11 +75,6 @@ function scrollToTargetElement(scrollToElementId) {
     );
   };
 
-  if (scrollToElementId === '') {
-    console.error('nav a[href]にリンクが未設定');
-    return;
-  }
-
   toggleNavOpenClass(false);
 
   const pos = calculateScrollPosition(scrollToElementId);
@@ -67,15 +89,21 @@ $('.nav_btn').on('click', () => {
 $('nav')
   .find('a[href]')
   .on('click', (e) => {
-    e.preventDefault(); //デフォルトaタグの遷移イベントを切る
-    scrollToTargetElement($(e.target).attr('href'));
+    const isInternalLink = handleLinkNavigation($(e.target).attr('href'));
+    //ページ内リンクのみデフォルトaタグ動作防止
+    if (isInternalLink) {
+      e.preventDefault();
+    }
   });
 
 $('header')
   .find('h1 a')
   .on('click', (e) => {
-    e.preventDefault(); //デフォルトaタグの遷移イベントを切る
-    scrollToTargetElement($(e.target).attr('href'));
+    const isInternalLink = handleLinkNavigation($(e.target).attr('href'));
+    //ページ内リンクのみデフォルトaタグ動作防止
+    if (isInternalLink) {
+      e.preventDefault();
+    }
   });
 
 // ================================
