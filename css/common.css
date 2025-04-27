@@ -14,6 +14,7 @@ PC: 1020px～
   --color-font: #14171a;
   --color-font_nav: #24292e;
   --color-header_bg: rgba(255, 255, 255, 0.5);
+  --color-page_title_bg: rgba(255, 255, 255, 0.5);
   --size_es: 0.8rem;
   --size_sm: 1rem;
   --size_md: 1.6rem;
@@ -73,6 +74,25 @@ main {
   text-align: center;
   /*TODO:wrapperでmbは管理しない*/
   margin-bottom: 150px;
+}
+
+.page_title {
+  height: 200px;
+  width: 100%;
+  background-image: url(/images/page_title/page_title_works.jpg);
+  background-size: cover;
+  background-position: center 56%;
+  margin-bottom: var(--gutter-section_pc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_title h2 {
+  display: block;
+  font-size: var(--size_xxl);
+  background-color: var(--color-page_title_bg);
+  padding: calc(var(--gutter_base) * 2) calc(var(--gutter_base) * 4);
 }
 
 .section_title {
