@@ -182,7 +182,7 @@ Works部分
 .works_list li img {
   display: inline-block;
   object-fit: fill;
-  /* width: 100%; */
+  border: 1px solid var(--color-main);
 }
 
 .works_card {

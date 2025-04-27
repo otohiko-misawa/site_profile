@@ -19,8 +19,8 @@ PC: 1020px～
   --size_sm: 1rem;
   --size_md: 1.6rem;
   --size_lg: 2.6rem;
-  --size_xl: 4.1rem;
-  --size_xxl: 6.6rem;
+  --size_xl: 4rem;
+  --size_xxl: 5.5rem;
   /*TODO:いまは殆ど適用していないが、将来的に全て8pxベースの定数を使う*/
   --gutter_base: 8px;
   --gutter-section: calc(var(--gutter_base) * 10);
@@ -87,7 +87,7 @@ main {
   display: inline-block;
   margin-bottom: 60px;
   border-bottom: 1px solid #383e45;
-  font-size: var(--size_xl);
+  font-size: var(--size_xxl);
 }
 
 .content_title {
