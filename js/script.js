@@ -30,12 +30,31 @@ function handleLinkNavigation(href) {
     return false;
   }
 
-  //#もしくは''で始まるかどうかチェック(ページ内リンクかどうか)
+  //#もしくは''で始まるかどうかチェック(明示的なページ内リンクかどうか)
   const isPageInternalLink = href.startsWith('#') || href === '';
 
-  if (isPageInternalLink) {
+  //現在のページのファイル名取得(将来WordPressにも対応)
+  const currentPageUrl = window.location.pathname;
+  const currentPageFileName = currentPageUrl.split('/').pop(); // パスの最後の部分を取得（ファイル名）
+  const currentPageName = currentPageFileName.replace(/\.[^/.]+$/, ''); // 拡張子があれば削除
+  console.log('url: ' + currentPageUrl);
+  console.log('fileName: ' + currentPageFileName);
+  console.log('name: ' + currentPageName);
+
+  //現在のページ名を含むリンク(index.html#aboutなども含む)
+  const hrefWithoutHashId = href.includes('#') ? href.split('#')[0] : href;
+  const isCurrentPageLink =
+    currentPageName && hrefWithoutHashId.includes(currentPageName);
+
+  if (isPageInternalLink || isCurrentPageLink) {
+    //#がある場合はid部分だけ抽出
+    let targetId = '';
+    if (href.includes('#')) {
+      targetId = href.substring(href.indexOf('#'));
+    }
+
     //ページ内リンクとして処理
-    scrollToTargetElement(href);
+    scrollToTargetElement(targetId);
     return true;
   } else {
     //外部リンクなので通常動作
