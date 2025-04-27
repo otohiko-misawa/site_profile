@@ -13,6 +13,7 @@ export default [
       globals: {
         ...globals.browser,
         $: 'readonly', //ESLintの$を定義する
+        MyProfileCommon: 'readonly', //common.jsのProfileCommon$を定義する
       },
     },
     //カスタムルール指定
