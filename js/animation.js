@@ -36,7 +36,8 @@ $(window).on('scroll', () => {
   //PCの場合
   else {
     //カードの親要素に掛かったらアニメーション開始
-    const isInView = $photoList.inView('topOnly', 150);
+    const isInView =
+      $photoList.length === 0 ? false : $photoList.inView('topOnly', 150); //photoListが存在しない場合のチェック
     if (isInView) {
       attachInViewClass($photoList);
     }
