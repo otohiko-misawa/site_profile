@@ -21,13 +21,26 @@ PC: 1020px～
   --size_lg: 2.6rem;
   --size_xl: 4rem;
   --size_xxl: 5.5rem;
-  /*TODO:いまは殆ど適用していないが、将来的に全て8pxベースの定数を使う*/
-  --gutter_base: 8px;
-  --gutter-section: calc(var(--gutter_base) * 10);
-  --gutter-section_pc: calc(var(--gutter_base) * 20);
-  --gutter-contents: calc(var(--gutter_base) * 5);
-  --gutter-contents_pc: calc(var(--gutter_base) * 10);
-  --gutter-contents_side: calc(var(--gutter_base) * 2);
+
+  /* ベース値 */
+  --space-unit: 8px;
+
+  /*TODO:あとで直書きの部分修正する。コンテンツ間は後で値を詰める*/
+  /* 主要間隔 */
+  --space-xs: calc(var(--space-unit) * 0.5); /* 4px: アイコン内の余白など */
+  --space-sm: var(--space-unit); /* 8px: テキスト間の余白など）*/
+  --space-md: calc(var(--space-unit) * 2); /* 16px: 一般的な間のComponent間隔*/
+  --space-lg: calc(var(--space-unit) * 3); /* 24px:セクション内Component間*/
+  --space-xl: calc(var(--space-unit) * 4); /* 32px:小程度のセクション間 */
+  --space-xxl: calc(var(--space-unit) * 8); /* 64px:大程度のセクション間 */
+
+  --gutter-section_sp: calc(var(--space-unit) * 8); /* 64px */
+  --gutter-section: calc(var(--space-unit) * 16); /*128px*/
+  --gutter-section-lg_sp: calc(var(--space-unit) * 10); /* 80px */
+  --gutter-section-lg: calc(var(--space-unit) * 20); /*160px*/
+  --gutter-contents_sp: calc(var(--space-unit) * 5); /*40px*/
+  --gutter-contents: calc(var(--space-unit) * 10); /*80px*/
+  --gutter-contents_side: calc(var(--space-unit) * 2); /*16px*/
   --font_quicksand: 'Quicksand', serif;
   --line_height_default: 1.75;
 
@@ -74,11 +87,6 @@ main {
   margin-left: auto;
 }
 
-section {
-  text-align: center;
-  margin-bottom: 150px;
-}
-
 /*スマートフォン*/
 @media screen and (max-width: 599px) {
   main {
@@ -109,18 +117,20 @@ section {
   background-image: url(/images/page_title/page_title_works.jpg);
   background-size: cover;
   background-position: center 56%;
-  margin-bottom: var(--gutter-section_pc);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: var(--gutter-section);
 }
 
 .page_title h2 {
   display: block;
   font-size: var(--size_xxl);
   background-color: var(--color-page_title_bg);
-  padding: calc(var(--gutter_base) * 2) calc(var(--gutter_base) * 4);
+  padding: calc(var(--space-unit) * 2) calc(var(--space-unit) * 4);
 }
+
+/*TODO:heading_titleを定義(TOP側の.section_titleはこっちにする)*/
 
 .section_title {
   display: inline-block;
@@ -132,6 +142,13 @@ section {
 .content_title {
   font-size: var(--size_md);
   margin: 10px 0;
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .page_title {
+    margin-bottom: var(--gutter-section_sp);
+  }
 }
 
 /* ========================

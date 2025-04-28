@@ -1,5 +1,20 @@
 @charset "UTF-8";
 /* ========================
+TOPページ全体
+======================== */
+.section_top {
+  text-align: center;
+  margin-bottom: var(--gutter-section-lg);
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .section_top {
+    margin-bottom: var(--gutter-section-lg_sp);
+  }
+}
+
+/* ========================
 メインビジュアル部分
 ======================== */
 #mainvisual {
