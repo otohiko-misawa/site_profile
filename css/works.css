@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
 /* ========================
-
+TOPページ全体
 ======================== */
+.section_works {
+  text-align: center;
+  margin-bottom: var(--gutter-section-lg);
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .section_works {
+    margin-bottom: var(--gutter-section-lg_sp);
+  }
+}
