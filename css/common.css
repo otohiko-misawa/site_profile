@@ -70,12 +70,39 @@ main {
 
 .wrapper {
   max-width: 960px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+section {
   text-align: center;
-  /*TODO:wrapperでmbは管理しない*/
   margin-bottom: 150px;
 }
 
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  main {
+    margin-top: 60px;
+  }
+
+  .wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  section {
+    margin-bottom: 100px;
+  }
+
+  .wrapper p,
+  header .wrapper {
+    margin: 0 1rem;
+  }
+}
+
+/* ========================
+共通パーツ
+======================== */
 .page_title {
   height: 200px;
   width: 100%;
@@ -105,29 +132,6 @@ main {
 .content_title {
   font-size: var(--size_md);
   margin: 10px 0;
-}
-
-/* note: inputのデフォルトチェックボックスは常に非表示 */
-#menu-toggle {
-  display: none;
-}
-
-/*スマートフォン*/
-@media screen and (max-width: 599px) {
-  main {
-    margin-top: 60px;
-  }
-
-  .wrapper {
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 100px;
-  }
-
-  .wrapper p,
-  header .wrapper {
-    margin: 0 1rem;
-  }
 }
 
 /* ========================
