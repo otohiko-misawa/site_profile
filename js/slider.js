@@ -26,10 +26,12 @@ $('#mainvisual').slick({
 
 $('.works_slide').slick({
   centerMode: true,
+  infinite: true,
   centerPadding: '60px',
   dots: true,
   autoplay: true,
   speed: 800,
+  autoplaySpeed: 5000,
   arrows: false,
   responsive: [
     {

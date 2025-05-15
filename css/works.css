@@ -55,9 +55,20 @@ TOPページ全体
   margin-left: auto;
 }
 
+.works_card {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .works_slide .works_card {
-  margin-right: 20px;
-  margin-left: 20px;
+  opacity: 0.9;
+  transform: scale(0.9);
+  transition: all 300ms ease;
+}
+
+.works_slide .works_card.slick-center {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .works_slide .works_card img {
