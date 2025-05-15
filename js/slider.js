@@ -23,3 +23,19 @@ $('#mainvisual').slick({
     },
   ],
 });
+
+$('.works_slide').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  dots: true,
+  autoplay: true,
+  speed: 800,
+  arrows: false,
+  responsive: [
+    {
+      //SP幅
+      breakpoint: MyProfileCommon.breakPointSp,
+      settings: {},
+    },
+  ],
+});

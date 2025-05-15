@@ -10,6 +10,7 @@ PC: 1020px～
 各CSSやJavaScriptの共通定数
 ======================== */
 :root {
+  --width_wrapper: 960px;
   --color-main: #111;
   --color-font: #14171a;
   --color-font_nav: #24292e;
@@ -82,7 +83,7 @@ main {
 }
 
 .wrapper {
-  max-width: 960px;
+  max-width: var(--width_wrapper);
   margin-right: auto;
   margin-left: auto;
 }
