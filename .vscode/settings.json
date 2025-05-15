@@ -1,4 +1,6 @@
 {
   "cody.autocomplete.enabled": false,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.enable": {
+    "*": false
+  }
 }
