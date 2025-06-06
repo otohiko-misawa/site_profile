@@ -91,18 +91,16 @@ TOPページ全体
   /* レクタングル(300x250)を基準比率とする */
   aspect-ratio: 6/5;
   width: 100%;
-  /*containに頼らずmax-width方式でflexが必要*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #banner .thumbnail_box img {
-  /*containに頼らずmax-width方式で*/
+  /*containだとborderが効かなくなるので、max-width方式*/
   max-width: 100%;
   max-height: 100%;
-  /* display: inline-block; */
-  /* object-fit: contain; */ /*TODO: containしたimgは、画像に沿ったborderにできない仕様。どうするか考える*/
+  display: inline-block;
 }
 
 /* #banner img {
@@ -115,4 +113,22 @@ TOPページ全体
   margin-left: auto;
   margin-right: auto;
   max-height: 500px;
+}
+
+/* ========================
+Webページ部分
+======================== */
+.tech_icons {
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px;
+  padding-top: 16px;
+}
+
+.tech_icons li img {
+  width: 4.5rem;
+  height: 4.5rem;
 }
