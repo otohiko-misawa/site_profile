@@ -27,10 +27,10 @@ TOPページ全体
 }
 
 .works_list li.column-medium {
-  flex-basis: calc(var(--width_wrapper) / 3 - 1rem); /*最大幅の1/3のサイズ*/
+  flex-basis: calc(var(--width_wrapper) / 3 - 2rem); /*最大幅の1/3のサイズ*/
 }
 .works_list li.column-large {
-  flex-basis: calc(var(--width_wrapper) / 2 - 1rem); /*最大幅の1/2のサイズ*/
+  flex-basis: calc(var(--width_wrapper) / 2 - 4rem); /*最大幅の1/2のサイズ*/
 }
 
 /* ========================

@@ -312,3 +312,31 @@ footer {
   padding: 10px 0;
   text-align: center;
 }
+
+/* ========================
+カードのリンクタップアニメーション
+======================== */
+.card_link {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center center; /* 中心を基点に拡大 */
+}
+
+.card_link:hover,
+.card_link:focus {
+  transform: scale(1.05);
+  box-shadow: 15px 12px 35px -4px rgba(0, 0, 0, 0.5);
+}
+
+.card_link:active {
+  transform: scale(0.97);
+}
+
+/*スマートフォン*/
+@media screen and (max-width: 599px) {
+  .card_link:hover,
+  .card_link:focus {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
