@@ -63,6 +63,10 @@ TOPページ全体
   padding: 1rem;
 }
 
+.works_card p {
+  min-height: 100px;
+}
+
 #typography .works_card {
   margin-right: 10px;
   margin-left: 10px;
